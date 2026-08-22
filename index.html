@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abhishek Kumar | Portfolio</title>
+
+    <meta name="description"
+        content="Abhishek Kumar's personal portfolio - BCA student, Cybersecurity Enthusiast, programmer and technology learner.">
+
+    <meta name="author" content="Abhishek Kumar">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #050816;
+            color: #f5f7ff;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        /* =========================
+           Background Effects
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: rgba(0, 212, 255, 0.08);
+            filter: blur(100px);
+            border-radius: 50%;
+            top: -150px;
+            left: -150px;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: rgba(124, 58, 237, 0.08);
+            filter: blur(100px);
+            border-radius: 50%;
+            bottom: -150px;
+            right: -150px;
+            z-index: -1;
+        }
+
+        /* =========================
+           Navigation
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 8, 22, 0.82);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: #00d4ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* =========================
+           Common
+        ========================= */
+
+        section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 100px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .section-title h2 span {
+            color: #00d4ff;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+        }
+
+        /* =========================
+           Hero
+        ========================= */
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+        }
+
+        .hero {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-small {
+            color: #00d4ff;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 75px);
+            line-height: 1.05;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, #00d4ff, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h2 {
+            color: #cbd5e1;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            max-width: 650px;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 22px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00d4ff, #6366f1);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,212,255,0.25);
+        }
+
+        .btn-outline:hover {
+            border-color: #00d4ff;
+            color: #00d4ff;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           Hero Image
+        ========================= */
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-circle {
+            width: 310px;
+            height: 310px;
+            border-radius: 50%;
+            padding: 6px;
+            background: linear-gradient(135deg, #00d4ff, #8b5cf6);
+            box-shadow: 0 0 60px rgba(0,212,255,0.18);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #050816;
+        }
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* =========================
+           About
+        ========================= */
+
+        .about-card {
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 35px;
+        }
+
+        .about-card p {
+            color: #cbd5e1;
+            margin-bottom: 18px;
+        }
+
+        .highlight {
+            color: #00d4ff;
+            font-weight: 600;
+        }
+
+        /* =========================
+           Education
+        ========================= */
+
+        .education-card {
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 35px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0,212,255,0.4);
+        }
+
+        .education-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .education-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           Skills
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0,212,255,0.35);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 20px;
+            color: #f8fafc;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            padding: 8px 13px;
+            background: rgba(0,212,255,0.08);
+            border: 1px solid rgba(0,212,255,0.15);
+            border-radius: 8px;
+            color: #cbd5e1;
+            font-size: 13px;
+        }
+
+        /* =========================
+           Projects
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 28px;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0,212,255,0.4);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .project-number {
+            color: #00d4ff;
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            color: #00d4ff;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .project-btn {
+            padding: 9px 13px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+
+        .project-btn:hover {
+            color: #00d4ff;
+            border-color: #00d4ff;
+        }
+
+        /* =========================
+           Certifications
+        ========================= */
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .cert-card {
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139,92,246,0.5);
+        }
+
+        .cert-card h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .cert-issuer {
+            color: #00d4ff;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .cert-info {
+            color: #94a3b8;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .cert-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .cert-links a {
+            font-size: 12px;
+            color: #cbd5e1;
+            padding: 7px 11px;
+            border-radius: 7px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .cert-links a:hover {
+            color: #00d4ff;
+            border-color: #00d4ff;
+        }
+
+        /* =========================
+           Resume
+        ========================= */
+
+        .resume-box {
+            text-align: center;
+            background: linear-gradient(
+                135deg,
+                rgba(0,212,255,0.08),
+                rgba(99,102,241,0.08)
+            );
+            border: 1px solid rgba(0,212,255,0.15);
+            border-radius: 20px;
+            padding: 55px 25px;
+        }
+
+        .resume-box h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .resume-box p {
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           Contact
+        ========================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d4ff;
+        }
+
+        .contact-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 7px;
+        }
+
+        .contact-card p {
+            color: #94a3b8;
+            font-size: 13px;
+            word-break: break-word;
+        }
+
+        /* =========================
+           Footer
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #cbd5e1;
+        }
+
+        /* =========================
+           Responsive
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 75px 18px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+            .profile-circle {
+                width: 230px;
+                height: 230px;
+            }
+
+            .projects-grid,
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .about-card,
+            .education-card {
+                padding: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         Navigation
+    ========================= -->
+
+    <nav>
+
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                Abhishek<span>.</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#certifications">Certificates</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
+    <section id="home">
+
+        <div class="hero">
+
+            <div>
+
+                <div class="hero-small">
+                    👋 WELCOME TO MY PORTFOLIO
+                </div>
+
+                <h1>
+                    Hi, I'm <span>Abhishek Kumar</span>
+                </h1>
+
+                <h2>
+                    💻 Pursuing BCA | 🔐 Cybersecurity Enthusiast
+                </h2>
+
+                <p>
+                    I'm a BCA student passionate about cybersecurity,
+                    programming, networking and technology. I enjoy
+                    learning new technologies and building practical
+                    projects to improve my technical skills.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="btn btn-primary">
+                        🚀 View My Projects
+                    </a>
+
+                    <a href="https://drive.google.com/file/d/1vGLmusm524J-dwb6rfjncK2U7bzmE1O8/view?usp=drive_link"
+                       target="_blank"
+                       class="btn btn-outline">
+                        📄 View Resume
+                    </a>
+
+                    <a href="mailto:abhishekgolu901@gmail.com"
+                       class="btn btn-outline">
+                        📧 Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <div class="profile-circle">
+
+                    <img
+                        src="https://github.com/abhishekgolu901.png"
+                        alt="Abhishek Kumar"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>
+                👨‍💻 About <span>Me</span>
+            </h2>
+
+            <p>
+                A little introduction about me
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <p>
+                Hello! I'm <span class="highlight">Abhishek Kumar</span>,
+                currently pursuing <span class="highlight">BCA</span>
+                at MLT College, Saharsa, affiliated with
+                Bhupendra Narayan Mandal University (BNMU).
+            </p>
+
+            <p>
+                I am interested in
+                <span class="highlight">Cybersecurity, Programming
+                and Networking</span>.
+                I enjoy exploring technology, learning new concepts
+                and creating practical projects.
+            </p>
+
+            <p>
+                My current learning journey includes
+                <span class="highlight">Python, C, C++, HTML, CSS,
+                JavaScript, networking and ethical hacking</span>.
+            </p>
+
+            <p>
+                My goal is to continuously improve my technical
+                knowledge, gain practical experience and build
+                useful technology projects.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section id="education">
+
+        <div class="section-title">
+
+            <h2>
+                🎓 <span>Education</span>
+            </h2>
+
+            <p>
+                My academic journey
+            </p>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <div class="education-icon">
+                🎓
+            </div>
+
+            <h3>
+                Bachelor of Computer Applications (BCA)
+            </h3>
+
+            <p>
+                <strong>MLT College, Saharsa</strong>
+            </p>
+
+            <p>
+                Affiliated with Bhupendra Narayan Mandal University (BNMU)
+            </p>
+
+            <br>
+
+            <a href="https://bnmu.ac.in/"
+               target="_blank"
+               class="btn btn-primary">
+                🌐 BNMU University
+            </a>
+
+            <a href="https://mltcollegebed.ac.in/"
+               target="_blank"
+               class="btn btn-outline">
+                🏫 MLT College
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>
+                🛠️ My <span>Skills</span>
+            </h2>
+
+            <p>
+                Technologies and tools I work with
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <h3>💻 Programming</h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JavaScript (Basic)</span>
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Python</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>🧰 Office Tools</h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">PowerPoint</span>
+                    <span class="skill-tag">Excel</span>
+                    <span class="skill-tag">Word</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>🎬 Creative & Video Editing</h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Premiere Pro</span>
+                    <span class="skill-tag">After Effects</span>
+                    <span class="skill-tag">DaVinci Resolve</span>
+                    <span class="skill-tag">CapCut</span>
+                    <span class="skill-tag">VN</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>🎨 Design Tools</h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Photoshop</span>
+                    <span class="skill-tag">Canva</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>🔧 Version Control & Tools</h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">GitHub</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>🔐 Areas of Interest</h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Cybersecurity</span>
+                    <span class="skill-tag">Ethical Hacking</span>
+                    <span class="skill-tag">Networking</span>
+                    <span class="skill-tag">Programming</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects">
+
+        <div class="section-title">
+
+            <h2>
+                💻 My <span>Projects</span>
+            </h2>
+
+            <p>
+                Some of my practical work
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- Project 1 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    🛒 E-Commerce Web Application
+                </h3>
+
+                <p>
+                    An Amazon-style e-commerce web application
+                    created to practice frontend development
+                    and web interface design.
+                </p>
+
+                <div class="project-tech">
+                    🛠 HTML
+                </div>
+
+                <div class="project-links">
+
+                    <a href="https://github.com/abhishekgolu901/E-Commerce-Web-Application-Amazon-style-UI"
+                       target="_blank"
+                       class="project-btn">
+                        💻 View Code
+                    </a>
+
+                    <a href="https://lnkd.in/p/g49yj5tA"
+                       target="_blank"
+                       class="project-btn">
+                        🎬 View Demo
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project 2 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    📱 Social Media Web Application
+                </h3>
+
+                <p>
+                    A Facebook-style social media web application
+                    interface created for practicing frontend
+                    development and UI design.
+                </p>
+
+                <div class="project-tech">
+                    🛠 HTML
+                </div>
+
+                <div class="project-links">
+
+                    <a href="https://github.com/abhishekgolu901/Social-Media-Web-Application-Facebook-style-UI"
+                       target="_blank"
+                       class="project-btn">
+                        💻 View Code
+                    </a>
+
+                    <a href="https://lnkd.in/p/gmGMBhZQ"
+                       target="_blank"
+                       class="project-btn">
+                        🎬 View Demo
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project 3 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>
+                    🔐 Basic Network Sniffer
+                </h3>
+
+                <p>
+                    A basic network sniffer created using Python
+                    and Scapy for learning about network packets,
+                    protocols and networking concepts.
+                </p>
+
+                <div class="project-tech">
+                    🛠 Python | Scapy
+                </div>
+
+                <div class="project-links">
+
+                    <a href="https://github.com/abhishekgolu901/CodeAlpha_NetworkSniffer"
+                       target="_blank"
+                       class="project-btn">
+                        💻 View Code
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CERTIFICATIONS
+    ========================= -->
+
+    <section id="certifications">
+
+        <div class="section-title">
+
+            <h2>
+                📜 My <span>Certifications</span>
+            </h2>
+
+            <p>
+                Courses and certifications I have completed
+            </p>
+
+        </div>
+
+
+        <div class="cert-grid">
+
+
+            <div class="cert-card">
+
+                <h3>
+                    🔐 Ethical Hacking Bootcamp
+                </h3>
+
+                <div class="cert-issuer">
+                    WsCube Tech
+                </div>
+
+                <div class="cert-info">
+                    Issued: Apr 2026<br>
+                    Credential ID: WS/2026/1/54476
+                </div>
+
+                <div class="cert-links">
+
+                    <a href="https://www.wscubetech.com/verify-certificate"
+                       target="_blank">
+                        🔎 Verify
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/abhishekgolu901/overlay/Certifications/1305637313/treasury/?profileId=ACoAAEvvmLQBBsWwDCuWK5DimwG_ylYQ7btfD94"
+                       target="_blank">
+                        📜 Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <h3>
+                    🛡️ Become a Cybersecurity Expert in 2026 – Masterclass
+                </h3>
+
+                <div class="cert-issuer">
+                    WsCube Tech
+                </div>
+
+                <div class="cert-info">
+                    Issued: Feb 2026<br>
+                    Credential ID: WS/2026/M/42168
+                </div>
+
+                <div class="cert-links">
+
+                    <a href="https://www.wscubetech.com/verify-certificate/SZUYZWS2026M4216878406"
+                       target="_blank">
+                        🔎 Verify
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/abhishekgolu901/overlay/Certifications/1805313133/treasury/?profileId=ACoAAEvvmLQBBsWwDCuWK5DimwG_ylYQ7btfD94"
+                       target="_blank">
+                        📜 Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <h3>
+                    📡 WI-FI Tutorial for Beginners - Ethical Hacking
+                </h3>
+
+                <div class="cert-issuer">
+                    WsCube Tech
+                </div>
+
+                <div class="cert-info">
+                    Issued: Feb 2026<br>
+                    Credential ID: 10EHW0ZE
+                </div>
+
+                <div class="cert-links">
+
+                    <a href="https://courses.wscubetech.com/verify-certificate?serialno=10EHW0ZE"
+                       target="_blank">
+                        🔎 Verify
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/abhishekgolu901/overlay/Certifications/836236752/treasury/?profileId=ACoAAEvvmLQBBsWwDCuWK5DimwG_ylYQ7btfD94"
+                       target="_blank">
+                        📜 Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <h3>
+                    🌐 Full Stack Development
+                </h3>
+
+                <div class="cert-issuer">
+                    CodeAlpha
+                </div>
+
+                <div class="cert-info">
+                    Issued: Sep 2024 · Expired: Sep 2024<br>
+                    Credential ID: CA/S1/6054
+                </div>
+
+                <div class="cert-links">
+
+                    <a href="https://www.codealpha.tech/#/verification"
+                       target="_blank">
+                        🔎 Verify
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/abhishekgolu901/overlay/Certifications/1175080594/treasury/?profileId=ACoAAEvvmLQBBsWwDCuWK5DimwG_ylYQ7btfD94"
+                       target="_blank">
+                        📜 Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <h3>
+                    ⌨️ Typing Certificate
+                </h3>
+
+                <div class="cert-issuer">
+                    Rashtriya Computer Prashikshan Pariyojna
+                </div>
+
+                <div class="cert-info">
+                    Issued: Sep 2023<br>
+                    Credential ID: A-048006
+                </div>
+
+                <div class="cert-links">
+
+                    <a href="https://rcppmail.org/certificate_login.php"
+                       target="_blank">
+                        🔎 Verify
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/abhishekgolu901/overlay/Certifications/970506956/treasury/?profileId=ACoAAEvvmLQBBsWwDCuWK5DimwG_ylYQ7btfD94"
+                       target="_blank">
+                        📜 Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <h3>
+                    💻 Advance Diploma in Computer Application (ADCA)
+                </h3>
+
+                <div class="cert-issuer">
+                    Rashtriya Computer Prashikshan Pariyojna
+                </div>
+
+                <div class="cert-info">
+                    Issued: Sep 2023<br>
+                    Credential ID: A-048006
+                </div>
+
+                <div class="cert-links">
+
+                    <a href="https://rcppmail.org/verify/?rid=207105222288A-048006"
+                       target="_blank">
+                        🔎 Verify
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/abhishekgolu901/overlay/Certifications/889471792/treasury/?profileId=ACoAAEvvmLQBBsWwDCuWK5DimwG_ylYQ7btfD94"
+                       target="_blank">
+                        📜 Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <h3>
+                    💻 Introduction to C++
+                </h3>
+
+                <div class="cert-issuer">
+                    Simplilearn Education
+                </div>
+
+                <div class="cert-info">
+                    Issued: May 2024 · Expired: May 2024<br>
+                    Credential ID: 6132224
+                </div>
+
+                <div class="cert-links">
+
+                    <a href="https://www.simplilearn.com/skillup-certificate-landing"
+                       target="_blank">
+                        🔎 Verify
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/abhishekgolu901/overlay/Certifications/787133655/treasury/?profileId=ACoAAEvvmLQBBsWwDCuWK5DimwG_ylYQ7btfD94"
+                       target="_blank">
+                        📜 Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <h3>
+                    🎯 Kushal Yuva Program (KYP)
+                </h3>
+
+                <div class="cert-issuer">
+                    Bihar Skill Development Mission
+                </div>
+
+                <div class="cert-info">
+                    Issued: Dec 2023<br>
+                    Credential ID: 3400493423071151
+                </div>
+
+                <div class="cert-links">
+
+                    <a href="https://solarex.mkcl.org/EF/exam/resultDisplay.jsp?jvId=rrt6xyagZLk%3D"
+                       target="_blank">
+                        🔎 Verify
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/abhishekgolu901/overlay/Certifications/696193335/treasury/?profileId=ACoAAEvvmLQBBsWwDCuWK5DimwG_ylYQ7btfD94"
+                       target="_blank">
+                        📜 Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <h3>
+                    🐍 Python 3.4.3 Training in IIT Bombay
+                </h3>
+
+                <div class="cert-issuer">
+                    Spoken Tutorial, EduPyramids, SINE, IIT Bombay
+                </div>
+
+                <div class="cert-info">
+                    Issued: May 2024<br>
+                    Credential ID: 3750682XQ7
+                </div>
+
+                <div class="cert-links">
+
+                    <a href="https://www.linkedin.com/in/abhishekgolu901/overlay/Certifications/695405557/treasury/?profileId=ACoAAEvvmLQBBsWwDCuWK5DimwG_ylYQ7btfD94"
+                       target="_blank">
+                        📜 Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <h3>
+                    💻 C Training in IIT Bombay
+                </h3>
+
+                <div class="cert-issuer">
+                    Spoken Tutorial, EduPyramids, SINE, IIT Bombay
+                </div>
+
+                <div class="cert-info">
+                    Issued: May 2024<br>
+                    Credential ID: 3750682VIW
+                </div>
+
+                <div class="cert-links">
+
+                    <a href="https://www.linkedin.com/in/abhishekgolu901/overlay/Certifications/695271666/treasury/?profileId=ACoAAEvvmLQBBsWwDCuWK5DimwG_ylYQ7btfD94"
+                       target="_blank">
+                        📜 Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <h3>
+                    🤖 Fundamental of Python for Machine Learning,
+                    Data Science and Web Development in IIT Roorkee
+                </h3>
+
+                <div class="cert-issuer">
+                    iHUB DivyaSampark @ IIT Roorkee
+                </div>
+
+                <div class="cert-info">
+                    Issued: Nov 2023<br>
+                    Credential ID: TIHBDST4559
+                </div>
+
+                <div class="cert-links">
+
+                    <a href="https://www.linkedin.com/in/abhishekgolu901/overlay/Certifications/694542963/treasury/?profileId=ACoAAEvvmLQBBsWwDCuWK5DimwG_ylYQ7btfD94"
+                       target="_blank">
+                        📜 Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESUME
+    ========================= -->
+
+    <section id="resume">
+
+        <div class="resume-box">
+
+            <h2>
+                📄 My Resume
+            </h2>
+
+            <p>
+                Want to know more about my education, skills and experience?
+            </p>
+
+            <a href="https://drive.google.com/file/d/1vGLmusm524J-dwb6rfjncK2U7bzmE1O8/view?usp=drive_link"
+               target="_blank"
+               class="btn btn-primary">
+
+                📄 View My Resume
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>
+                📞 Get In <span>Touch</span>
+            </h2>
+
+            <p>
+                Feel free to connect with me
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <a href="mailto:abhishekgolu901@gmail.com"
+               class="contact-card">
+
+                <div class="contact-icon">
+                    📧
+                </div>
+
+                <h3>
+                    Email
+                </h3>
+
+                <p>
+                    abhishekgolu901@gmail.com
+                </p>
+
+            </a>
+
+
+            <a href="https://github.com/abhishekgolu901"
+               target="_blank"
+               class="contact-card">
+
+                <div class="contact-icon">
+                    💻
+                </div>
+
+                <h3>
+                    GitHub
+                </h3>
+
+                <p>
+                    github.com/abhishekgolu901
+                </p>
+
+            </a>
+
+
+            <a href="https://www.linkedin.com/in/abhishekgolu901/"
+               target="_blank"
+               class="contact-card">
+
+                <div class="contact-icon">
+                    🔗
+                </div>
+
+                <h3>
+                    LinkedIn
+                </h3>
+
+                <p>
+                    linkedin.com/in/abhishekgolu901
+                </p>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026 <strong>Abhishek Kumar</strong>.
+            Built with HTML & CSS.
+        </p>
+
+        <p>
+            🚀 Learn • Build • Explore • Grow
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
